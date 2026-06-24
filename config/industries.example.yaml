@@ -1,0 +1,53 @@
+# 复制为 config/industries.yaml 后按你的股票池扩展
+# 产出仅供研究参考，不构成投资建议。
+# exchange: SHA=上交所, SHE=深交所, HKG=港交所, NYSE=纽交所, NASDAQ=纳斯达克
+industries:
+  - sector: 石油
+    macro:
+      enabled: true
+      queries:
+        - "Brent crude oil price today outlook {month} {year}"
+        - "OPEC oil production outlook demand forecast {month} {year}"
+        - "EIA STEO oil price forecast Brent WTI {month} {year}"
+      linkage_queries:
+        - "三桶油 国际油价 盈利 敏感度"
+        - "{name} 油价 业绩 影响"
+    news_queries:
+      - "{name} {code} 最新消息 公告"
+      - "{name} 股价 业绩 分红"
+    sub_sectors:
+      - name: 油气开采
+        stocks:
+          - code: "600938"
+            name: 中国海油
+            exchange: SHA
+            aliases: ["中海油", "CNOOC"]
+          - code: "601857"
+            name: 中国石油
+            exchange: SHA
+            aliases: ["中石油", "PETROCHINA"]
+
+  - sector: 银行
+    macro:
+      enabled: true
+      queries:
+        - "中国 LPR 利率 {year}年{month} 央行"
+        - "商业银行 净息差 NIM 趋势 {year}"
+        - "bank sector credit growth China {year}"
+      linkage_queries:
+        - "{name} {code} {latest_quarter} 净利润 净息差"
+        - "{name} 不良率 拨备覆盖率 {year}"
+    news_queries:
+      - "{name} {code} 最新消息 公告 {year}"
+      - "{name} 分红 业绩 {year}"
+    sub_sectors:
+      - name: 国有大行
+        stocks:
+          - code: "601398"
+            name: 工商银行
+            exchange: SHA
+            aliases: ["ICBC"]
+          - code: "600036"
+            name: 招商银行
+            exchange: SHA
+            aliases: ["CMB", "招行"]

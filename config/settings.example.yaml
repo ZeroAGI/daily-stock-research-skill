@@ -1,0 +1,10 @@
+# 复制为 config/settings.yaml 后按需修改
+# 产出仅供研究参考，不构成投资建议。
+data_root: "reports"  # 报告与检索缓存根目录（相对项目根）
+
+serpapi:
+  # SerpApi 官方默认端点：https://serpapi.com/search-api
+  base_url: "https://serpapi.com/search.json"
+  default_engine: "google"
+  num_results: 10
+  timeout_seconds: 30

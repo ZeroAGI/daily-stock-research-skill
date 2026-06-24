@@ -1,0 +1,23 @@
+# 本地配置（从 example 复制）
+config/industries.yaml
+config/settings.yaml
+
+# 密钥
+.env
+.env.local
+
+# 搜索缓存（示例报告可提交）
+reports/**/_search-cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# 编辑器
+.idea/
+.vscode/
